@@ -1,12 +1,12 @@
 package uz.gita.testapp.presentation.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import uz.gita.testapp.R
 import uz.gita.testapp.data.model.UserData
 import uz.gita.testapp.databinding.ItemVerticalBinding
@@ -33,6 +33,7 @@ class VerticalAdapter :
         }
 
         fun bind() {
+            Log.d("LLL", "$absoluteAdapterPosition")
             Glide.with(binding.root)
                 .load(getItem(absoluteAdapterPosition).download_url.changeSize())
                 .placeholder(R.drawable.place_holder)

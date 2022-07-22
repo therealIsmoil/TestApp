@@ -43,7 +43,7 @@ class InfoScreen : Fragment(R.layout.screen_info) {
             .load(it.download_url)
             .placeholder(R.drawable.place_holder)
             .centerCrop()
-            .apply(RequestOptions().override(100, 100))
+            .apply(RequestOptions().override(300, 200))
             .error(R.drawable.ic_launcher_background)
             .into(binding.infoImage)
         binding.infoName.text = it.author

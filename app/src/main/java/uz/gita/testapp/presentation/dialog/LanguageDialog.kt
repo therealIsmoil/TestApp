@@ -1,5 +1,7 @@
 package uz.gita.testapp.presentation.dialog
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,11 @@ class LanguageDialog : BottomSheetDialogFragment() {
     private var onCLickRuLineListener: ((Int) -> Unit)? = null
     private var onCLickUzLineListener: ((Int) -> Unit)? = null
     private var onCLickEngLineListener: ((Int) -> Unit)? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
