@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="settings">Настройка</string>
+    <string name="main_screen_title">Чат</string>
+    <string name="language">Язык</string>
+    <string name="theme">Тема</string>
+    <string name="info">Информатион</string>
+</resources>

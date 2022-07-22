@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="settings">Sozlash</string>
+    <string name="main_screen_title">Suhbat</string>
+    <string name="language">Til</string>
+    <string name="theme">Mavzu</string>
+    <string name="info">Ma\'lumot</string>
+</resources>
