@@ -7,9 +7,14 @@ import uz.gita.testapp.presentation.viewmodel.InfoScreenViewModel
 
 class InfoScreenViewModelImpl : ViewModel(), InfoScreenViewModel {
     override val setDataLiveData = MutableLiveData<UserData>()
+    override val backLiveData = MutableLiveData<Unit>()
 
     override fun setData(userData: UserData) {
         setDataLiveData.value = userData
+    }
+
+    override fun onCLickBack() {
+        backLiveData.value = Unit
     }
 
 }

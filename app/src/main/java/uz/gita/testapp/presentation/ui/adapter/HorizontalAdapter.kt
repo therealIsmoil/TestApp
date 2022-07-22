@@ -10,6 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import uz.gita.testapp.R
 import uz.gita.testapp.data.model.UserData
 import uz.gita.testapp.databinding.ItemHorizontalBinding
+import uz.gita.testapp.utils.changeSize
 
 class HorizontalAdapter :
     ListAdapter<UserData, HorizontalAdapter.HorizontalViewHolder>(HorizontalDiffUtil) {
@@ -33,7 +34,7 @@ class HorizontalAdapter :
 
         fun bind() {
             Glide.with(binding.root)
-                .load(getItem(absoluteAdapterPosition).download_url)
+                .load(getItem(absoluteAdapterPosition).download_url.changeSize())
                 .placeholder(R.drawable.place_holder)
                 .centerCrop()
                 .error(R.drawable.ic_launcher_background)

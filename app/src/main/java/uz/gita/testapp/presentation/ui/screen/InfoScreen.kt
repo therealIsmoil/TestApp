@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -30,7 +31,11 @@ class InfoScreen : Fragment(R.layout.screen_info) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.setData(userData)
         viewModel.setDataLiveData.observe(viewLifecycleOwner, setDataObserver)
+        viewModel.backLiveData.observe(viewLifecycleOwner, backObserver)
 
+        binding.backIcon.setOnClickListener {
+            viewModel.onCLickBack()
+        }
     }
 
     private val setDataObserver = Observer<UserData> {
@@ -38,8 +43,12 @@ class InfoScreen : Fragment(R.layout.screen_info) {
             .load(it.download_url)
             .placeholder(R.drawable.place_holder)
             .centerCrop()
+            .apply(RequestOptions().override(100, 100))
             .error(R.drawable.ic_launcher_background)
             .into(binding.infoImage)
         binding.infoName.text = it.author
+    }
+    private val backObserver = Observer<Unit> {
+        findNavController().popBackStack()
     }
 }
