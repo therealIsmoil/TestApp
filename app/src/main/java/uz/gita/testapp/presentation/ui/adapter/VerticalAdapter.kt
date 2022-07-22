@@ -35,7 +35,6 @@ class VerticalAdapter :
         fun bind() {
             Glide.with(binding.root)
                 .load(getItem(absoluteAdapterPosition).download_url.changeSize())
-                .apply(RequestOptions().override(100, 100))
                 .placeholder(R.drawable.place_holder)
                 .centerCrop()
                 .error(R.drawable.ic_launcher_background)

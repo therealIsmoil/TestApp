@@ -61,7 +61,6 @@ class MainScreen : Fragment(R.layout.screen_main) {
     }
 
     private val userDataObserver = Observer<List<UserData>> {
-        Log.d("TTT", "$it")
         horizontalAdapter.submitList(it)
         verticalAdapter.submitList(it)
     }

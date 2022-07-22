@@ -36,7 +36,6 @@ class HorizontalAdapter :
                 .load(getItem(absoluteAdapterPosition).download_url)
                 .placeholder(R.drawable.place_holder)
                 .centerCrop()
-                .apply(RequestOptions().override(100, 100))
                 .error(R.drawable.ic_launcher_background)
                 .into(binding.imageHorizontal)
         }

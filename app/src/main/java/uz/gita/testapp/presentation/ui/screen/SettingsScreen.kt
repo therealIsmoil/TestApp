@@ -1,5 +1,6 @@
 package uz.gita.testapp.presentation.ui.screen
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import uz.gita.testapp.MainActivity
 import uz.gita.testapp.R
 import uz.gita.testapp.data.source.local.MySharedPreference
 import uz.gita.testapp.databinding.ScreenSettingsBinding
@@ -87,10 +89,12 @@ class SettingsScreen : Fragment(R.layout.screen_settings) {
         preferences.theme = it
         if (it) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            findNavController().popBackStack()
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            findNavController().popBackStack()
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         }
     }
 
